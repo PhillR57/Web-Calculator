@@ -16,7 +16,16 @@ const operationNumbers = {
 }
 
 export function display(val) {
-  display_value.value = val;
+    if (val==="ERROR" || val === "") {
+        display_value.value = val;
+    } else {
+        let displayValue = Number(val);
+        if (Math.abs(displayValue) >= 10 ** 12 || Math.abs(displayValue) < 10 ** -12) {
+            display_value.value = displayValue.toExponential(10);
+        } else {
+            display_value.value = displayValue;
+        }
+    }
 }
 
 export function clear() {

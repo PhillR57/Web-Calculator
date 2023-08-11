@@ -51,7 +51,7 @@ header {
 input {
   font-size: 40px;
   width: 340px;
-  align-items: center;
+  text-align: end;
 }
 
 /*-----numbers-----*/
