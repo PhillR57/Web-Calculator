@@ -23,7 +23,7 @@ export function display(val) {
         if (Math.abs(displayValue) >= 10 ** 12) {
             display_value.value = displayValue.toExponential(10);
         }else if(Math.abs(displayValue) >= 10 ** -12 || val.length >= 12){
-            displayValue = Math.round(1000 * displayValue) / 1000;
+            displayValue = Math.round(1e10 * displayValue) / 1e10;
             display_value.value = displayValue;
         } else {
             display_value.value = displayValue;
