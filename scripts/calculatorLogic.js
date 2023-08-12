@@ -20,8 +20,11 @@ export function display(val) {
         display_value.value = val;
     } else {
         let displayValue = Number(val);
-        if (Math.abs(displayValue) >= 10 ** 12 || Math.abs(displayValue) < 10 ** -12) {
+        if (Math.abs(displayValue) >= 10 ** 12) {
             display_value.value = displayValue.toExponential(10);
+        }else if(Math.abs(displayValue) >= 10 ** -12 || val.length >= 12){
+            displayValue = Math.round(1000 * displayValue) / 1000;
+            display_value.value = displayValue;
         } else {
             display_value.value = displayValue;
         }
